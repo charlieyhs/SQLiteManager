@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/">
+        <file>AbrirBBDD.png</file>
+        <file>AbrirSQL.png</file>
+        <file>AcercaDe.png</file>
+        <file>base.png</file>
+        <file>BaseDeDatos.png</file>
+        <file>buscar_Reemplazar.png</file>
+        <file>Computer.png</file>
+        <file>copiar.png</file>
+        <file>cortar.png</file>
+        <file>Ejecutar.png</file>
+        <file>GuardarBBDD.png</file>
+        <file>GuardarSQL.png</file>
+        <file>imprimir.png</file>
+        <file>manual.png</file>
+        <file>pegar.png</file>
+        <file>Preferencias.png</file>
+        <file>quitar.png</file>
+        <file>tabla.png</file>
+        <file>correcto.png</file>
+        <file>fallo.png</file>
+        <file>eliminar.png</file>
+        <file>mostrar.png</file>
+        <file>remover.png</file>
+    </qresource>
+</RCC>

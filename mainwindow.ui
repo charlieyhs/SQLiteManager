@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>355</width>
+    <height>353</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SQLite Manager</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="res.qrc">
+    <normaloff>:/Computer.png</normaloff>:/Computer.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="DuTreeWidget" name="treeWidget">
+       <property name="contextMenuPolicy">
+        <enum>Qt::ActionsContextMenu</enum>
+       </property>
+       <column>
+        <property name="text">
+         <string notr="true">Bases de datos</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/BaseDeDatos.png</normaloff>:/BaseDeDatos.png</iconset>
+        </property>
+       </column>
+      </widget>
+      <widget class="QSplitter" name="splitter">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <widget class="QTextEdit" name="textEdit"/>
+       <widget class="QTableView" name="tableView"/>
+       <widget class="QListWidget" name="listWidget"/>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>355</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="actionAbrir_Base"/>
+    <addaction name="actionGuardar_Base"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbrir_SQL"/>
+    <addaction name="actionGuardar_SQL"/>
+    <addaction name="separator"/>
+    <addaction name="actionImprimir"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuitar"/>
+   </widget>
+   <widget class="QMenu" name="menuEditar">
+    <property name="title">
+     <string>Editar</string>
+    </property>
+    <addaction name="actionCopiar"/>
+    <addaction name="actionCortar"/>
+    <addaction name="actionPegar"/>
+    <addaction name="separator"/>
+    <addaction name="actionBuscar_y_Reemplazar"/>
+   </widget>
+   <widget class="QMenu" name="menuHerramientas">
+    <property name="title">
+     <string>Herramientas</string>
+    </property>
+    <addaction name="actionEjecutar"/>
+    <addaction name="separator"/>
+    <addaction name="actionPreferencias"/>
+   </widget>
+   <widget class="QMenu" name="menuAyuda">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <addaction name="actionManual"/>
+    <addaction name="separator"/>
+    <addaction name="actionAcerca_de_SQLiteManager"/>
+   </widget>
+   <addaction name="menuArchivo"/>
+   <addaction name="menuEditar"/>
+   <addaction name="menuHerramientas"/>
+   <addaction name="menuAyuda"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionAbrir_Base"/>
+   <addaction name="actionAbrir_SQL"/>
+   <addaction name="actionGuardar_Base"/>
+   <addaction name="actionGuardar_SQL"/>
+   <addaction name="actionEjecutar"/>
+  </widget>
+  <action name="actionAbrir_Base">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/AbrirBBDD.png</normaloff>:/AbrirBBDD.png</iconset>
+   </property>
+   <property name="text">
+    <string>Abrir Base</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionGuardar_Base">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/GuardarBBDD.png</normaloff>:/GuardarBBDD.png</iconset>
+   </property>
+   <property name="text">
+    <string>Guardar Base</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionAbrir_SQL">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/AbrirSQL.png</normaloff>:/AbrirSQL.png</iconset>
+   </property>
+   <property name="text">
+    <string>Abrir SQL</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+O</string>
+   </property>
+  </action>
+  <action name="actionGuardar_SQL">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/GuardarSQL.png</normaloff>:/GuardarSQL.png</iconset>
+   </property>
+   <property name="text">
+    <string>Guardar SQL</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionImprimir">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/imprimir.png</normaloff>:/imprimir.png</iconset>
+   </property>
+   <property name="text">
+    <string>Imprimir</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionQuitar">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/quitar.png</normaloff>:/quitar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Salir</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionCopiar">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/copiar.png</normaloff>:/copiar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copiar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionCortar">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/cortar.png</normaloff>:/cortar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cortar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionPegar">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/pegar.png</normaloff>:/pegar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pegar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionEjecutar">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/Ejecutar.png</normaloff>:/Ejecutar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ejecutar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionPreferencias">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/Preferencias.png</normaloff>:/Preferencias.png</iconset>
+   </property>
+   <property name="text">
+    <string>Preferencias</string>
+   </property>
+  </action>
+  <action name="actionManual">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/manual.png</normaloff>:/manual.png</iconset>
+   </property>
+   <property name="text">
+    <string>Manual</string>
+   </property>
+  </action>
+  <action name="actionAcerca_de_SQLiteManager">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/AcercaDe.png</normaloff>:/AcercaDe.png</iconset>
+   </property>
+   <property name="text">
+    <string>Acerca de SQLiteManager</string>
+   </property>
+  </action>
+  <action name="actionBuscar_y_Reemplazar">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/buscar_Reemplazar.png</normaloff>:/buscar_Reemplazar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Buscar y Reemplazar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DuTreeWidget</class>
+   <extends>QTreeWidget</extends>
+   <header location="global">dutreewidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
